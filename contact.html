@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Maître François-Xavier Cressent</title>
+    <meta name="description"
+        content="Prenez rendez-vous avec Maître Cressent, avocat à Mantes-la-Jolie. Formulaire de contact, téléphone et plan d'accès.">
+
+    <meta property="og:title" content="Contact - Maître Cressent">
+    <meta property="og:description" content="Coordonnées et prise de rendez-vous.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cressent-avocat.fr/contact.html">
+
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                Maître Cressent
+                <span>Avocat au Barreau de Versailles</span>
+            </a>
+            <button class="mobile-toggle" aria-label="Menu"><i data-lucide="menu"></i></button>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Accueil</a></li>
+                    <li><a href="cabinet.html" class="nav-link">Le Cabinet</a></li>
+                    <li><a href="domaines.html" class="nav-link">Domaines</a></li>
+                    <li><a href="honoraires.html" class="nav-link">Honoraires</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li><a href="tel:0185500155" class="btn btn-primary btn-sm">Prendre RDV</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="section section-bg">
+        <div class="container text-center">
+            <h1>Contact & Accès</h1>
+            <p style="max-width: 700px; margin: 0 auto;">
+                Le cabinet vous reçoit du lundi au vendredi, uniquement sur rendez-vous.
+            </p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Coordonnées -->
+                <div>
+                    <h2 style="margin-bottom: 30px;">Nos Coordonnées</h2>
+
+                    <div class="contact-info-item">
+                        <div class="contact-icon"><i data-lucide="map-pin"></i></div>
+                        <div>
+                            <h4 style="margin-bottom: 5px;">Adresse</h4>
+                            <p>
+                                2 bis Rue Pierre de Ronsard<br>
+                                78200 Mantes-la-Jolie
+                            </p>
+                            <p style="color: var(--color-primary); font-weight: 500; font-size: 0.9rem;">
+                                <i data-lucide="info" size="14" style="display: inline; vertical-align: middle;"></i>
+                                Situé juste en face du bureau de police
+                            </p>
+                            <a href="https://www.google.com/maps/search/?api=1&query=2+bis+Rue+Pierre+de+Ronsard+78200+Mantes-la-Jolie"
+                                target="_blank" class="btn btn-outline btn-sm" style="margin-top: 10px;">
+                                Itinéraire Google Maps
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-item">
+                        <div class="contact-icon"><i data-lucide="phone"></i></div>
+                        <div>
+                            <h4 style="margin-bottom: 5px;">Téléphone</h4>
+                            <p>
+                                <a href="tel:0185500155" style="font-weight: 600; font-size: 1.1rem;">01 85 50 01 55</a>
+                            </p>
+                            <p style="font-size: 0.9rem; color: var(--color-text-light);">
+                                Standard téléphonique ouvert du lundi au vendredi.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-item">
+                        <div class="contact-icon"><i data-lucide="clock"></i></div>
+                        <div>
+                            <h4 style="margin-bottom: 5px;">Horaires</h4>
+                            <p>
+                                Lundi - Vendredi : 09h00 - 18h00<br>
+                                <span style="font-style: italic;">Uniquement sur rendez-vous</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Formulaire -->
+                <div class="card">
+                    <h2 style="margin-bottom: 20px;">Envoyer un message</h2>
+                    <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+                        <input type="hidden" name="form-name" value="contact" />
+                        <p class="hidden" style="display: none;">
+                            <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+                        </p>
+
+                        <div class="form-group">
+                            <label for="nom" class="form-label">Nom complet</label>
+                            <input type="text" id="nom" name="nom" class="form-control" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" id="email" name="email" class="form-control" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="telephone" class="form-label">Téléphone</label>
+                            <input type="tel" id="telephone" name="telephone" class="form-control" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="objet" class="form-label">Objet de la demande</label>
+                            <select id="objet" name="objet" class="form-control" required>
+                                <option value="">-- Choisir un sujet --</option>
+                                <option value="etrangers">Droit des étrangers</option>
+                                <option value="famille">Droit de la famille</option>
+                                <option value="penal">Droit pénal</option>
+                                <option value="fiscal">Droit fiscal</option>
+                                <option value="commercial">Droit commercial</option>
+                                <option value="autre">Autre demande</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea id="message" name="message" class="form-control" rows="5" required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="rgpd" name="rgpd" required>
+                                <label for="rgpd">
+                                    J'accepte que les informations saisies soient utilisées pour me recontacter dans le
+                                    cadre de ma demande.
+                                    Aucune donnée ne sera transmise à des tiers.
+                                </label>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Envoyer le message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Embed (Optional visual enhancement, using static image or iframe if requested, but link is safer/lighter) -->
+    <!-- Keeping it simple with the button link above as per "code léger" constraint, but adding a visual placeholder could be nice. 
+         Let's stick to the clean link button for performance and privacy. -->
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h4 class="footer-title">Cabinet Cressent</h4>
+                    <p style="color: #cbd5e1; max-width: 300px;">
+                        Avocat au Barreau de Versailles. Une défense rigoureuse et humaine pour tous vos litiges.
+                    </p>
+                    <div style="margin-top: 15px;">
+                        <a href="mentions-legales.html" class="btn btn-outline"
+                            style="color: white; border-color: rgba(255,255,255,0.4); padding: 6px 14px; font-size: 0.85rem; border-radius: 6px;">Mentions
+                            légales</a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="footer-title">Liens rapides</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="cabinet.html">Le Cabinet</a></li>
+                        <li><a href="domaines.html">Domaines d'intervention</a></li>
+                        <li><a href="honoraires.html">Honoraires</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4 class="footer-title">Contact</h4>
+                    <p><i data-lucide="map-pin" size="16"></i> 2 bis Rue Pierre de Ronsard<br>78200 Mantes-la-Jolie</p>
+                    <p><i data-lucide="phone" size="16"></i> 01 85 50 01 55</p>
+                    <p><i data-lucide="clock" size="16"></i> Lun - Ven (Sur RDV uniquement)</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year"></span> Maître François-Xavier Cressent. Tous droits réservés.</p>
+
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+
+</html>
