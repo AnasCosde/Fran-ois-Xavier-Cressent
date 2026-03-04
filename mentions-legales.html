@@ -15,15 +15,16 @@
 
     <link rel="stylesheet" href="styles.css">
     <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
 </head>
 
 <body>
 
     <header class="header">
         <div class="container header-container">
-            <a href="index.html" class="logo">
-                Maître Cressent
-                <span>Avocat au Barreau de Versailles</span>
+            <a href="index.html" class="logo" aria-label="Cabinet de Maître François-Xavier Cressent">
+                <img src="assets/logo-fxc.png" alt="Logo Maître François-Xavier Cressent" class="logo-mark">
             </a>
             <button class="mobile-toggle" aria-label="Menu"><i data-lucide="menu"></i></button>
             <nav>
@@ -222,7 +223,10 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; <span id="current-year"></span> Maître François-Xavier Cressent. Tous droits réservés.</p>
+                <p class="footer-credit-line">
+                    &copy; <span id="current-year"></span> Maître François-Xavier Cressent. Tous droits réservés.
+                    <img src="assets/framefolk-logo.png" alt="FrameFolk" class="footer-studio-logo">
+                </p>
 
             </div>
         </div>

@@ -15,15 +15,16 @@
 
     <link rel="stylesheet" href="styles.css">
     <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
 </head>
 
 <body>
 
     <header class="header">
         <div class="container header-container">
-            <a href="index.html" class="logo">
-                Maître Cressent
-                <span>Avocat au Barreau de Versailles</span>
+            <a href="index.html" class="logo" aria-label="Cabinet de Maître François-Xavier Cressent">
+                <img src="assets/logo-fxc.png" alt="Logo Maître François-Xavier Cressent" class="logo-mark">
             </a>
             <button class="mobile-toggle" aria-label="Menu"><i data-lucide="menu"></i></button>
             <nav>
@@ -71,12 +72,10 @@
                             Français)</li>
                         <li style="margin-bottom: 8px;">⬢ Demandes de naturalisation</li>
                     </ul>
-                    <a href="contact.html" class="btn btn-outline btn-sm">Nous contacter</a>
+                    <a href="contact.html?objet=etrangers" class="btn btn-outline btn-sm">Nous contacter</a>
                 </div>
-                <div class="card section-bg" style="border: none;">
-                    <p class="text-center" style="font-style: italic;">
-                        "Une expertise pointue pour faire valoir vos droits fondamentaux."
-                    </p>
+                <div class="domain-media">
+                    <img src="PPID.jpg" alt="Illustration du droit des étrangers" class="domain-image">
                 </div>
             </div>
         </div>
@@ -107,12 +106,10 @@
                         <li style="margin-bottom: 8px;">⬢ Autorité parentale, garde d'enfants et droit de visite</li>
                         <li style="margin-bottom: 8px;">⬢ Pension alimentaire</li>
                     </ul>
-                    <a href="contact.html" class="btn btn-outline btn-sm">Nous contacter</a>
+                    <a href="contact.html?objet=famille" class="btn btn-outline btn-sm">Nous contacter</a>
                 </div>
-                <div class="card section-bg" style="border: none; order: 1;">
-                    <p class="text-center" style="font-style: italic;">
-                        "Privilégier l'apaisement tout en protégeant vos intérêts."
-                    </p>
+                <div class="domain-media" style="order: 1;">
+                    <img src="DDLFID.jpg" alt="Illustration du droit de la famille" class="domain-image">
                 </div>
             </div>
         </div>
@@ -143,12 +140,10 @@
                         <li style="margin-bottom: 8px;">⬢ Aménagement de peine</li>
                         <li style="margin-bottom: 8px;">⬢ Demandes de mise en liberté et sorties de détention</li>
                     </ul>
-                    <a href="contact.html" class="btn btn-outline btn-sm">Nous contacter</a>
+                    <a href="contact.html?objet=penal" class="btn btn-outline btn-sm">Nous contacter</a>
                 </div>
-                <div class="card section-bg" style="border: none;">
-                    <p class="text-center" style="font-style: italic;">
-                        "Une défense combative pour garantir le respect de vos droits."
-                    </p>
+                <div class="domain-media">
+                    <img src="DPI2.jpg" alt="Illustration du droit pénal" class="domain-image">
                 </div>
             </div>
         </div>
@@ -178,12 +173,10 @@
                         <li style="margin-bottom: 8px;">⬢ Contentieux fiscal</li>
                         <li style="margin-bottom: 8px;">⬢ Compréhension des enjeux déclaratifs</li>
                     </ul>
-                    <a href="contact.html" class="btn btn-outline btn-sm">Nous contacter</a>
+                    <a href="contact.html?objet=fiscal" class="btn btn-outline btn-sm">Nous contacter</a>
                 </div>
-                <div class="card section-bg" style="border: none; order: 1;">
-                    <p class="text-center" style="font-style: italic;">
-                        "Clarifier la complexité fiscale pour votre sérénité."
-                    </p>
+                <div class="domain-media" style="order: 1;">
+                    <img src="DRID2.jpg" alt="Illustration du droit fiscal" class="domain-image">
                 </div>
             </div>
         </div>
@@ -211,12 +204,10 @@
                         <li style="margin-bottom: 8px;">⬢ Informations juridiques pour les entreprises</li>
                         <li style="margin-bottom: 8px;">⬢ Recouvrement de créances</li>
                     </ul>
-                    <a href="contact.html" class="btn btn-outline btn-sm">Prendre rendez-vous</a>
+                    <a href="contact.html?objet=commercial" class="btn btn-outline btn-sm">Prendre rendez-vous</a>
                 </div>
-                <div class="card section-bg" style="border: none;">
-                    <p class="text-center" style="font-style: italic;">
-                        "Sécuriser vos transactions et votre activité commerciale."
-                    </p>
+                <div class="domain-media">
+                    <img src="DCID.jpg" alt="Illustration du droit commercial" class="domain-image">
                 </div>
             </div>
         </div>
@@ -252,7 +243,10 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; <span id="current-year"></span> Maître François-Xavier Cressent. Tous droits réservés.</p>
+                <p class="footer-credit-line">
+                    &copy; <span id="current-year"></span> Maître François-Xavier Cressent. Tous droits réservés.
+                    <img src="assets/framefolk-logo.png" alt="FrameFolk" class="footer-studio-logo">
+                </p>
 
             </div>
         </div>

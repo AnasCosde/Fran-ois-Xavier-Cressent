@@ -20,6 +20,8 @@
 
     <!-- Icons (Lucide via CDN for lightweight SVG icons) -->
     <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
 </head>
 
 <body>
@@ -27,9 +29,8 @@
     <!-- Header -->
     <header class="header">
         <div class="container header-container">
-            <a href="index.html" class="logo">
-                Maître Cressent
-                <span>Avocat au Barreau de Versailles</span>
+            <a href="index.html" class="logo" aria-label="Cabinet de Maître François-Xavier Cressent">
+                <img src="assets/logo-fxc.png" alt="Logo Maître François-Xavier Cressent" class="logo-mark">
             </a>
 
             <button class="mobile-toggle" aria-label="Menu">
@@ -50,14 +51,20 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container hero-content">
-            <h1>Maître François-Xavier Cressent</h1>
-            <p class="hero-subtitle">Avocat au Barreau de Versailles — Mantes-la-Jolie</p>
-            <p class="hero-text">
-                Un accompagnement juridique fondé sur la proximité, l'écoute et l'efficacité.
-                Je défends vos intérêts avec rigueur et humanité, quelle que soit la complexité de votre situation.
-            </p>
-            <div class="hero-actions">
-                <a href="contact.html" class="btn btn-primary">Nous contacter</a>
+            <div class="hero-text-content">
+                <h1>Maître François-Xavier Cressent</h1>
+                <p class="hero-subtitle">Avocat au Barreau de Versailles — Mantes-la-Jolie</p>
+                <p class="hero-text">
+                    Un accompagnement juridique fondé sur la proximité, l'écoute et l'efficacité.
+                    Je défends vos intérêts avec rigueur et humanité, quelle que soit la complexité de votre situation.
+                </p>
+                <div class="hero-actions">
+                    <a href="contact.html" class="btn btn-primary">Nous contacter</a>
+                </div>
+            </div>
+            <div class="hero-media">
+                <img src="assets/hero-justice.jpg" alt="Marteau de juge et balance de la justice"
+                    class="hero-image">
             </div>
         </div>
     </section>
@@ -95,146 +102,72 @@
     <section class="section section-bg">
         <div class="container">
             <h2 class="text-center">Domaines d'intervention</h2>
-            <div style="margin-top: 40px; display: flex; flex-direction: column; gap: 40px;">
-                <!-- Droit des Étrangers -->
-                <div class="grid-2"
-                    style="align-items: center; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);">
+            <div class="domain-link-grid">
+                <a href="domaines.html#etrangers" class="domain-link-card">
+                    <div class="domain-link-icon"><i data-lucide="globe" class="text-primary" size="22"></i></div>
                     <div>
-                        <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
-                            <div style="background: var(--color-secondary); padding: 10px; border-radius: 50%;">
-                                <i data-lucide="globe" class="text-primary" size="24"></i>
-                            </div>
-                            <h3 style="margin: 0; font-size: 1.5rem;">Droit des Étrangers</h3>
-                        </div>
-                        <ul style="margin-bottom: 20px; list-style-type: none; padding: 0;">
-                            <li style="margin-bottom: 8px; display: flex; gap: 10px;"><i data-lucide="check"
-                                    class="text-primary" size="18" style="flex-shrink: 0; margin-top: 3px;"></i>
-                                Demandes de titres de séjour (vie privée et familiale, salarié, etc.)</li>
-                            <li style="margin-bottom: 8px; display: flex; gap: 10px;"><i data-lucide="check"
-                                    class="text-primary" size="18" style="flex-shrink: 0; margin-top: 3px;"></i>
-                                Changement de statut</li>
-                            <li style="margin-bottom: 8px; display: flex; gap: 10px;"><i data-lucide="check"
-                                    class="text-primary" size="18" style="flex-shrink: 0; margin-top: 3px;"></i>
-                                Procédures de régularisation</li>
-                            <li style="margin-bottom: 8px; display: flex; gap: 10px;"><i data-lucide="check"
-                                    class="text-primary" size="18" style="flex-shrink: 0; margin-top: 3px;"></i> Recours
-                                contre les OQTF (Obligation de Quitter le Territoire Français)</li>
-                        </ul>
+                        <h3>Droit des Étrangers</h3>
+                        <p>Titres de séjour, régularisation, recours OQTF.</p>
                     </div>
-                </div>
-
-                <!-- Droit de la Famille -->
-                <div class="grid-2"
-                    style="align-items: center; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);">
-                    <div style="order: 2;">
-                        <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
-                            <div style="background: var(--color-secondary); padding: 10px; border-radius: 50%;">
-                                <i data-lucide="users" class="text-primary" size="24"></i>
-                            </div>
-                            <h3 style="margin: 0; font-size: 1.5rem;">Droit de la Famille</h3>
-                        </div>
-                        <ul style="margin-bottom: 20px; list-style-type: none; padding: 0;">
-                            <li style="margin-bottom: 8px; display: flex; gap: 10px;"><i data-lucide="check"
-                                    class="text-primary" size="18" style="flex-shrink: 0; margin-top: 3px;"></i> Divorce
-                                (par consentement mutuel ou contentieux)</li>
-                            <li style="margin-bottom: 8px; display: flex; gap: 10px;"><i data-lucide="check"
-                                    class="text-primary" size="18" style="flex-shrink: 0; margin-top: 3px;"></i>
-                                Séparation de corps ou de concubins</li>
-                            <li style="margin-bottom: 8px; display: flex; gap: 10px;"><i data-lucide="check"
-                                    class="text-primary" size="18" style="flex-shrink: 0; margin-top: 3px;"></i>
-                                Autorité parentale, garde d'enfants et droit de visite</li>
-                            <li style="margin-bottom: 8px; display: flex; gap: 10px;"><i data-lucide="check"
-                                    class="text-primary" size="18" style="flex-shrink: 0; margin-top: 3px;"></i> Pension
-                                alimentaire</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Droit Pénal -->
-                <div class="grid-2"
-                    style="align-items: center; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);">
+                </a>
+                <a href="domaines.html#famille" class="domain-link-card">
+                    <div class="domain-link-icon"><i data-lucide="users" class="text-primary" size="22"></i></div>
                     <div>
-                        <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
-                            <div style="background: var(--color-secondary); padding: 10px; border-radius: 50%;">
-                                <i data-lucide="scale" class="text-primary" size="24"></i>
-                            </div>
-                            <h3 style="margin: 0; font-size: 1.5rem;">Droit Pénal</h3>
-                        </div>
-                        <ul style="margin-bottom: 20px; list-style-type: none; padding: 0;">
-                            <li style="margin-bottom: 8px; display: flex; gap: 10px;"><i data-lucide="check"
-                                    class="text-primary" size="18" style="flex-shrink: 0; margin-top: 3px;"></i> Garde
-                                à
-                                vœue et auditions libres</li>
-                            <li style="margin-bottom: 8px; display: flex; gap: 10px;"><i data-lucide="check"
-                                    class="text-primary" size="18" style="flex-shrink: 0; margin-top: 3px;"></i>
-                                Défense
-                                devant le Tribunal Correctionnel et de Police</li>
-                            <li style="margin-bottom: 8px; display: flex; gap: 10px;"><i data-lucide="check"
-                                    class="text-primary" size="18" style="flex-shrink: 0; margin-top: 3px;"></i>
-                                Comparutions immédiates</li>
-                            <li style="margin-bottom: 8px; display: flex; gap: 10px;"><i data-lucide="check"
-                                    class="text-primary" size="18" style="flex-shrink: 0; margin-top: 3px;"></i>
-                                Aménagement de peine</li>
-                        </ul>
+                        <h3>Droit de la Famille</h3>
+                        <p>Divorce, séparation, garde d’enfants, pension.</p>
                     </div>
-                </div>
-
-                <!-- Droit Fiscal -->
-                <div class="grid-2"
-                    style="align-items: center; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);">
-                    <div style="order: 2;">
-                        <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
-                            <div style="background: var(--color-secondary); padding: 10px; border-radius: 50%;">
-                                <i data-lucide="file-bar-chart" class="text-primary" size="24"></i>
-                            </div>
-                            <h3 style="margin: 0; font-size: 1.5rem;">Droit Fiscal</h3>
-                        </div>
-                        <ul style="margin-bottom: 20px; list-style-type: none; padding: 0;">
-                            <li style="margin-bottom: 8px; display: flex; gap: 10px;"><i data-lucide="check"
-                                    class="text-primary" size="18" style="flex-shrink: 0; margin-top: 3px;"></i> Conseil
-                                fiscal aux particuliers et entreprises</li>
-                            <li style="margin-bottom: 8px; display: flex; gap: 10px;"><i data-lucide="check"
-                                    class="text-primary" size="18" style="flex-shrink: 0; margin-top: 3px;"></i>
-                                Assistance lors de contrôles fiscaux</li>
-                            <li style="margin-bottom: 8px; display: flex; gap: 10px;"><i data-lucide="check"
-                                    class="text-primary" size="18" style="flex-shrink: 0; margin-top: 3px;"></i>
-                                Contentieux fiscal</li>
-                            <li style="margin-bottom: 8px; display: flex; gap: 10px;"><i data-lucide="check"
-                                    class="text-primary" size="18" style="flex-shrink: 0; margin-top: 3px;"></i>
-                                Compréhension des enjeux déclaratifs</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Droit Commercial -->
-                <div class="grid-2"
-                    style="align-items: center; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);">
+                </a>
+                <a href="domaines.html#penal" class="domain-link-card">
+                    <div class="domain-link-icon"><i data-lucide="scale" class="text-primary" size="22"></i></div>
                     <div>
-                        <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
-                            <div style="background: var(--color-secondary); padding: 10px; border-radius: 50%;">
-                                <i data-lucide="briefcase" class="text-primary" size="24"></i>
-                            </div>
-                            <h3 style="margin: 0; font-size: 1.5rem;">Droit Commercial</h3>
-                        </div>
-                        <ul style="margin-bottom: 20px; list-style-type: none; padding: 0;">
-                            <li style="margin-bottom: 8px; display: flex; gap: 10px;"><i data-lucide="check"
-                                    class="text-primary" size="18" style="flex-shrink: 0; margin-top: 3px;"></i> Cession
-                                et acquisition de fonds de commerce</li>
-                            <li style="margin-bottom: 8px; display: flex; gap: 10px;"><i data-lucide="check"
-                                    class="text-primary" size="18" style="flex-shrink: 0; margin-top: 3px;"></i> Baux
-                                commerciaux (rédaction, renouvellement, litiges)</li>
-                            <li style="margin-bottom: 8px; display: flex; gap: 10px;"><i data-lucide="check"
-                                    class="text-primary" size="18" style="flex-shrink: 0; margin-top: 3px;"></i>
-                                Informations juridiques pour les entreprises</li>
-                            <li style="margin-bottom: 8px; display: flex; gap: 10px;"><i data-lucide="check"
-                                    class="text-primary" size="18" style="flex-shrink: 0; margin-top: 3px;"></i>
-                                Recouvrement de créances</li>
-                        </ul>
+                        <h3>Droit Pénal</h3>
+                        <p>Garde à vue, défense, comparutions immédiates.</p>
+                    </div>
+                </a>
+                <a href="domaines.html#fiscal" class="domain-link-card">
+                    <div class="domain-link-icon"><i data-lucide="file-bar-chart" class="text-primary" size="22"></i></div>
+                    <div>
+                        <h3>Droit Fiscal</h3>
+                        <p>Conseil, contrôles fiscaux, contentieux.</p>
+                    </div>
+                </a>
+                <a href="domaines.html#commercial" class="domain-link-card">
+                    <div class="domain-link-icon"><i data-lucide="briefcase" class="text-primary" size="22"></i></div>
+                    <div>
+                        <h3>Droit Commercial</h3>
+                        <p>Cession de fonds, baux commerciaux, recouvrement.</p>
+                    </div>
+                </a>
+                <a href="domaines.html" class="domain-link-card domain-link-cta">
+                    <div class="domain-link-cta-content">
+                        <span class="domain-link-cta-label">Voir tous les domaines</span>
+                        <span class="domain-link-cta-icon"><i data-lucide="arrow-right"></i></span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Avis clients -->
+    <section class="section section-bg reviews-section">
+        <div class="container">
+            <div class="reviews-heading">
+                <div class="reviews-title">
+                    <h2>Avis clients</h2>
+                    <p class="reviews-subtitle text-light">Des retours authentiques de clients accompagnés par le cabinet.</p>
+                </div>
+                <div class="reviews-summary" aria-label="Note Google : 4,3 sur 5, 38 avis">
+                    <div class="reviews-summary-top">
+                        <span class="reviews-score">4,3</span>
+                        <span class="reviews-stars" style="--rating: 4.3;" aria-hidden="true"></span>
+                    </div>
+                    <div class="reviews-summary-bottom">
+                        <img src="assets/google-logo.png" alt="Logo Google" class="google-logo">
                     </div>
                 </div>
             </div>
-            <div class="text-center" style="margin-top: 40px;">
-                <a href="domaines.html" class="btn btn-outline">Voir tous les domaines</a>
+            <div class="reviews-carousel" role="region" aria-label="Avis clients" tabindex="0">
+                <div class="reviews-track" id="reviews-track" role="list"></div>
             </div>
         </div>
     </section>
@@ -242,26 +175,51 @@
     <!-- Accès Rapide -->
     <section class="section">
         <div class="container">
-            <div class="card" style="background-color: var(--color-primary); color: white; border: none;">
-                <div class="grid-2" style="align-items: center;">
-                    <div>
-                        <h2 style="color: white;">Accès Rapide</h2>
-                        <p style="color: #cbd5e1; font-size: 1.1rem;">
+            <div class="quick-access-card">
+                <div class="quick-access-grid">
+                    <div class="quick-access-content">
+                        <p class="quick-access-eyebrow">Accès rapide</p>
+                        <h2>Accès Rapide</h2>
+                        <p class="quick-access-lead">
                             Le cabinet est idéalement situé au cœur de Mantes-la-Jolie.
                         </p>
-                        <div style="margin-top: 20px; display: flex; align-items: center; gap: 10px;">
-                            <i data-lucide="map-pin"></i>
-                            <span>2 bis Rue Pierre de Ronsard, 78200 Mantes-la-Jolie</span>
-                        </div>
-                        <div
-                            style="margin-top: 10px; display: flex; align-items: center; gap: 10px; font-weight: 600; color: #93c5fd;">
-                            <i data-lucide="info"></i>
-                            <span>Situé juste en face du bureau de police</span>
+                        <div class="quick-access-list">
+                            <div class="quick-access-item">
+                                <div class="quick-access-icon"><i data-lucide="map-pin"></i></div>
+                                <div>
+                                    <span class="quick-access-label">Adresse</span>
+                                    <span class="quick-access-value">2 bis Rue Pierre de Ronsard, 78200 Mantes-la-Jolie</span>
+                                </div>
+                            </div>
+                            <div class="quick-access-item">
+                                <div class="quick-access-icon"><i data-lucide="info"></i></div>
+                                <div>
+                                    <span class="quick-access-label">Repère</span>
+                                    <span class="quick-access-value">Situé juste en face du bureau de police</span>
+                                </div>
+                            </div>
+                            <div class="quick-access-item">
+                                <div class="quick-access-icon"><i data-lucide="phone"></i></div>
+                                <div>
+                                    <span class="quick-access-label">Téléphone</span>
+                                    <span class="quick-access-value">01 85 50 01 55</span>
+                                </div>
+                            </div>
+                            <div class="quick-access-item">
+                                <div class="quick-access-icon"><i data-lucide="clock"></i></div>
+                                <div>
+                                    <span class="quick-access-label">Horaires</span>
+                                    <span class="quick-access-value">Lun - Ven (Sur RDV uniquement)</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="text-center">
-                        <a href="contact.html" class="btn"
-                            style="background-color: white; color: var(--color-primary);">Nous trouver</a>
+                    <div class="quick-access-actions">
+                        <div class="quick-access-panel">
+                            <p class="quick-access-panel-title">Itinéraire & accueil</p>
+                            <p class="quick-access-panel-text">Un rendez-vous rapide et un accès facile au cabinet.</p>
+                            <a href="contact.html" class="btn quick-access-btn">Nous trouver</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -299,9 +257,9 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; <span id="current-year"></span> Maître François-Xavier Cressent. Tous droits réservés.</p>
-                <p style="margin-top: 10px; font-size: 0.75rem; color: #64748b;">
-                    Les informations fournies sur ce site sont à titre indicatif.
+                <p class="footer-credit-line">
+                    &copy; <span id="current-year"></span> Maître François-Xavier Cressent. Tous droits réservés.
+                    <img src="assets/framefolk-logo.png" alt="FrameFolk" class="footer-studio-logo">
                 </p>
             </div>
         </div>

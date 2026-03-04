@@ -15,15 +15,16 @@
 
     <link rel="stylesheet" href="styles.css">
     <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
 </head>
 
 <body>
 
     <header class="header">
         <div class="container header-container">
-            <a href="index.html" class="logo">
-                Maître Cressent
-                <span>Avocat au Barreau de Versailles</span>
+            <a href="index.html" class="logo" aria-label="Cabinet de Maître François-Xavier Cressent">
+                <img src="assets/logo-fxc.png" alt="Logo Maître François-Xavier Cressent" class="logo-mark">
             </a>
             <button class="mobile-toggle" aria-label="Menu"><i data-lucide="menu"></i></button>
             <nav>
@@ -51,54 +52,51 @@
             <div class="contact-grid">
                 <!-- Coordonnées -->
                 <div>
-                    <h2 style="margin-bottom: 30px;">Nos Coordonnées</h2>
+                                        <h2 style="margin-bottom: 30px;">Nos Coordonnées</h2>
 
                     <div class="contact-info-item">
-                        <div class="contact-icon"><i data-lucide="map-pin"></i></div>
-                        <div>
-                            <h4 style="margin-bottom: 5px;">Adresse</h4>
-                            <p>
-                                2 bis Rue Pierre de Ronsard<br>
-                                78200 Mantes-la-Jolie
-                            </p>
-                            <p style="color: var(--color-primary); font-weight: 500; font-size: 0.9rem;">
-                                <i data-lucide="info" size="14" style="display: inline; vertical-align: middle;"></i>
-                                Situé juste en face du bureau de police
-                            </p>
-                            <a href="https://www.google.com/maps/search/?api=1&query=2+bis+Rue+Pierre+de+Ronsard+78200+Mantes-la-Jolie"
-                                target="_blank" class="btn btn-outline btn-sm" style="margin-top: 10px;">
-                                Itinéraire Google Maps
-                            </a>
+                            <div class="contact-icon"><i data-lucide="map-pin"></i></div>
+                            <div>
+                                <h4 style="margin-bottom: 5px;">Adresse</h4>
+                                <p>
+                                    2 bis Rue Pierre de Ronsard<br>
+                                    78200 Mantes-la-Jolie
+                                </p>
+                                <a href="https://www.google.com/maps/search/?api=1&query=2+bis+Rue+Pierre+de+Ronsard+78200+Mantes-la-Jolie"
+                                    target="_blank" class="btn btn-outline btn-sm btn-maps" style="margin-top: 10px;">
+                                    <img src="assets/google-maps-logo.png" alt="" class="maps-icon" aria-hidden="true">
+                                    Itinéraire Google Maps
+                                </a>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="contact-info-item">
-                        <div class="contact-icon"><i data-lucide="phone"></i></div>
-                        <div>
-                            <h4 style="margin-bottom: 5px;">Téléphone</h4>
-                            <p>
-                                <a href="tel:0185500155" style="font-weight: 600; font-size: 1.1rem;">01 85 50 01 55</a>
-                            </p>
-                            <p style="font-size: 0.9rem; color: var(--color-text-light);">
-                                Standard téléphonique ouvert du lundi au vendredi.
-                            </p>
+                        <div class="contact-info-item">
+                            <div class="contact-icon"><i data-lucide="phone"></i></div>
+                            <div>
+                                <h4 style="margin-bottom: 5px;">Téléphone</h4>
+                                <p>
+                                    <a href="tel:0185500155" style="font-weight: 600; font-size: 1.1rem;">01 85 50 01 55</a>
+                                </p>
+                                <p style="font-size: 0.9rem; color: var(--color-text-light);">
+                                    Standard téléphonique ouvert du lundi au vendredi.
+                                </p>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="contact-info-item">
-                        <div class="contact-icon"><i data-lucide="clock"></i></div>
-                        <div>
-                            <h4 style="margin-bottom: 5px;">Horaires</h4>
-                            <p>
-                                Lundi - Vendredi : 09h00 - 18h00<br>
-                                <span style="font-style: italic;">Uniquement sur rendez-vous</span>
-                            </p>
+                        <div class="contact-info-item">
+                            <div class="contact-icon"><i data-lucide="clock"></i></div>
+                            <div>
+                                <h4 style="margin-bottom: 5px;">Horaires</h4>
+                                <p>
+                                    Lundi - Vendredi : 09h00 - 18h00<br>
+                                    <span style="font-style: italic;">Uniquement sur rendez-vous</span>
+                                </p>
+                            </div>
                         </div>
                     </div>
-                </div>
 
                 <!-- Formulaire -->
-                <div class="card">
+                <div class="card no-hover">
                     <h2 style="margin-bottom: 20px;">Envoyer un message</h2>
                     <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
                         <input type="hidden" name="form-name" value="contact" />
@@ -191,7 +189,10 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; <span id="current-year"></span> Maître François-Xavier Cressent. Tous droits réservés.</p>
+                <p class="footer-credit-line">
+                    &copy; <span id="current-year"></span> Maître François-Xavier Cressent. Tous droits réservés.
+                    <img src="assets/framefolk-logo.png" alt="FrameFolk" class="footer-studio-logo">
+                </p>
 
             </div>
         </div>
