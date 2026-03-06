@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite';
 
 export default defineConfig({
+  base: './',
   server: {
     host: '0.0.0.0',
     port: 3000,
@@ -8,5 +9,13 @@ export default defineConfig({
   },
   build: {
     outDir: 'dist',
+    rollupOptions: {
+      input: {
+        main: 'index.html',
+        domaines: 'domaines.html',
+        contact: 'contact.html',
+        mentions: 'mentions-legales.html'
+      }
+    }
   }
 });
