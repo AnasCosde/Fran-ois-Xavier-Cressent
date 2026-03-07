@@ -61,6 +61,30 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // Hero slider (Homepage)
+    const heroSlides = Array.from(document.querySelectorAll('.hero-slide'));
+    if (heroSlides.length > 1) {
+        let current = 0;
+        const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const interval = prefersReduced ? null : 6000;
+        const transitionDuration = 1200;
+
+        const goNext = () => {
+            const prev = current;
+            current = (current + 1) % heroSlides.length;
+            heroSlides[prev].classList.remove('active');
+            heroSlides[prev].classList.add('prev');
+            heroSlides[current].classList.add('active');
+            setTimeout(() => {
+                heroSlides[prev].classList.remove('prev');
+            }, transitionDuration);
+        };
+
+        if (!prefersReduced) {
+            setInterval(goNext, interval);
+        }
+    }
+
     // Reviews Carousel (Homepage)
     const reviewData = [
         {

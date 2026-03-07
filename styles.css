@@ -211,9 +211,38 @@ img { max-width: 100%; display: block; }
 
 .mobile-toggle {
     display: none;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     cursor: pointer;
     color: var(--color-primary);
+    margin-left: auto;
+    width: 46px;
+    height: 46px;
+    border-radius: 12px;
+    border: 1px solid var(--color-border);
+    background: rgba(255, 255, 255, 0.9);
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+    transition: background 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
+}
+
+.mobile-toggle:hover {
+    background: #f8fafc;
+    box-shadow: 0 4px 10px rgba(15, 44, 89, 0.08);
+}
+
+.mobile-toggle:active {
+    transform: translateY(1px);
+}
+
+.mobile-toggle:focus-visible {
+    outline: 2px solid rgba(15, 44, 89, 0.35);
+    outline-offset: 2px;
+}
+
+.mobile-toggle i, .mobile-toggle svg {
+    width: 22px;
+    height: 22px;
 }
 
 /* Hero Section */
@@ -263,13 +292,47 @@ img { max-width: 100%; display: block; }
     width: 100%;
 }
 
-.hero-image {
+.hero-slider {
+    position: relative;
     width: 100%;
     height: 100%;
     max-height: 420px;
     border-radius: 12px;
-    object-fit: cover;
+    overflow: hidden;
     box-shadow: var(--shadow-md);
+    background: #0f172a;
+}
+
+.hero-slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transform: translateX(10%);
+    transition: opacity 1.1s ease, transform 1.1s ease;
+}
+
+.hero-slide.active {
+    opacity: 1;
+    transform: translateX(0);
+    z-index: 2;
+}
+
+.hero-slide.prev {
+    opacity: 0;
+    transform: translateX(-10%);
+    z-index: 1;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 8s linear;
+}
+
+.hero-slide.active .hero-image {
+    transform: scale(1.015);
 }
 
 /* Cards Grid */
@@ -988,7 +1051,7 @@ img { max-width: 100%; display: block; }
 @media (max-width: 768px) {
     :root { --header-height: 70px; }
     
-    .mobile-toggle { display: block; }
+    .mobile-toggle { display: inline-flex; }
     
     .nav-menu {
         position: fixed;
