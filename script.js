@@ -2,14 +2,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // Mobile Menu Toggle
     const mobileToggle = document.querySelector('.mobile-toggle');
     const navMenu = document.querySelector('.nav-menu');
-    
+
     if (mobileToggle && navMenu) {
         mobileToggle.addEventListener('click', () => {
             navMenu.classList.toggle('active');
             const icon = mobileToggle.querySelector('i');
             // Simple icon toggle logic if using an icon library, or just text
         });
-        
+
         // Close menu when clicking a link
         navMenu.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
@@ -37,14 +37,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // Active Link Highlighting
     const currentPath = window.location.pathname;
     const navLinks = document.querySelectorAll('.nav-link');
-    
+
     navLinks.forEach(link => {
         const href = link.getAttribute('href');
         // Check if href matches current path (handling root / and index.html)
         if (href === currentPath || (currentPath === '/' && href === 'index.html') || (currentPath.endsWith('/') && href === 'index.html')) {
             link.classList.add('active');
         } else if (currentPath.includes(href) && href !== 'index.html') {
-             link.classList.add('active');
+            link.classList.add('active');
         }
     });
 
@@ -61,27 +61,81 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Hero slider (Homepage)
-    const heroSlides = Array.from(document.querySelectorAll('.hero-slide'));
-    if (heroSlides.length > 1) {
-        let current = 0;
-        const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        const interval = prefersReduced ? null : 6000;
-        const transitionDuration = 1200;
+    // Hero Slider
+    const heroSlider = document.querySelector('.hero-slider');
+    if (heroSlider) {
+        const slides = Array.from(heroSlider.querySelectorAll('.hero-slide'));
+        if (slides.length > 1 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            let current = 0;
+            let slideInterval;
+            let transitionTimeout;
 
-        const goNext = () => {
-            const prev = current;
-            current = (current + 1) % heroSlides.length;
-            heroSlides[prev].classList.remove('active');
-            heroSlides[prev].classList.add('prev');
-            heroSlides[current].classList.add('active');
-            setTimeout(() => {
-                heroSlides[prev].classList.remove('prev');
-            }, transitionDuration);
-        };
+            const goTo = (next) => {
+                // Handle looping
+                let target = next;
+                if (target < 0) target = slides.length - 1;
+                else if (target >= slides.length) target = 0;
 
-        if (!prefersReduced) {
-            setInterval(goNext, interval);
+                if (target === current) return;
+
+                // Stop previous cleanups to prevent glitches during rapid clicking
+                clearTimeout(transitionTimeout);
+
+                // Clean up any slides that are not part of this specific transition immediately
+                slides.forEach((slide, index) => {
+                    if (index !== current && index !== target) {
+                        slide.classList.remove('active', 'leaving');
+                    }
+                });
+
+                const outgoing = slides[current];
+                const incoming = slides[target];
+
+                // Change states
+                outgoing.classList.remove('active');
+                outgoing.classList.add('leaving');
+
+                incoming.classList.remove('leaving');
+                incoming.classList.add('active');
+
+                // Set new current immediately
+                current = target;
+
+                const dur = parseFloat(
+                    getComputedStyle(incoming).transitionDuration || '0.9'
+                ) * 1000 + 50;
+
+                transitionTimeout = setTimeout(() => {
+                    outgoing.classList.remove('leaving');
+                }, dur);
+            };
+
+            const startInterval = () => {
+                clearInterval(slideInterval);
+                slideInterval = setInterval(() => {
+                    goTo(current + 1);
+                }, 5000);
+            };
+
+            startInterval();
+
+            // Controls
+            const prevBtn = heroSlider.querySelector('.hero-prev');
+            const nextBtn = heroSlider.querySelector('.hero-next');
+
+            if (prevBtn) {
+                prevBtn.addEventListener('click', () => {
+                    goTo(current - 1);
+                    startInterval(); // Reset timer if the user clicks manually
+                });
+            }
+
+            if (nextBtn) {
+                nextBtn.addEventListener('click', () => {
+                    goTo(current + 1);
+                    startInterval();
+                });
+            }
         }
     }
 
@@ -254,7 +308,8 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!group) return;
             const groupWidth = group.getBoundingClientRect().width;
             if (!groupWidth) return;
-            const speed = 35; // px per second
+            const isMobile = window.innerWidth <= 768;
+            const speed = isMobile ? 18 : 35; // Plus lent sur mobile (18px/s vs 35px/s)
             const duration = Math.max(20, groupWidth / speed);
             reviewsTrack.style.setProperty('--marquee-distance', `${groupWidth}px`);
             reviewsTrack.style.setProperty('--marquee-duration', `${duration}s`);
@@ -274,4 +329,69 @@ document.addEventListener('DOMContentLoaded', () => {
         reviewsCarousel.addEventListener('touchstart', pause, { passive: true });
         reviewsCarousel.addEventListener('touchend', resume);
     }
+
+    // Observer pour l'effet 'hover' automatique sur mobile
+    const hoverCards = document.querySelectorAll('.card, .domain-link-card');
+    if (hoverCards.length > 0) {
+        let isMobile = window.matchMedia("(max-width: 768px)").matches;
+
+        const removeAllMobileHovers = () => {
+            hoverCards.forEach(c => c.classList.remove('mobile-hover'));
+        };
+
+        const hoverObserver = new IntersectionObserver((entries) => {
+            if (!isMobile) return;
+
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    removeAllMobileHovers();
+                    entry.target.classList.add('mobile-hover');
+                } else {
+                    entry.target.classList.remove('mobile-hover');
+                }
+            });
+        }, {
+            // Déclenche l'effet de croisement uniquement au centre de l'écran (-40% en haut et en bas)
+            rootMargin: "-40% 0px -40% 0px",
+            threshold: 0
+        });
+
+        hoverCards.forEach(card => hoverObserver.observe(card));
+
+        // Désactive la simulation de hover si la fenêtre rebascule en format bureau
+        window.addEventListener('resize', () => {
+            let newlyMobile = window.matchMedia("(max-width: 768px)").matches;
+            if (isMobile !== newlyMobile) {
+                isMobile = newlyMobile;
+                if (!isMobile) removeAllMobileHovers();
+            }
+        });
+    }
+
+    // Animation au scroll des titres de section (h2)
+    const sectionObserverOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.35 // Se déclenche quand 35% de la section est visible (plus tard qu'avant)
+    };
+
+    const sectionObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // On cherche les titres à animer dans cette section précise
+                const titles = entry.target.querySelectorAll('.section-title-reveal');
+                titles.forEach(title => {
+                    title.classList.add('active');
+                });
+                // Une seule fois (ne pas re-déclencher)
+                observer.unobserve(entry.target);
+            }
+        });
+    }, sectionObserverOptions);
+
+    // Observer les sections parentes pour déclencher le titre
+    const sectionsToObserve = document.querySelectorAll('.section, footer');
+    sectionsToObserve.forEach(section => {
+        sectionObserver.observe(section);
+    });
 });

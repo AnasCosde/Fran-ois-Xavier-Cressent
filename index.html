@@ -52,36 +52,47 @@
     <section class="hero">
         <div class="container hero-content">
             <div class="hero-text-content">
-                <h1>Maître François-Xavier Cressent</h1>
-                <p class="hero-subtitle">Avocat au Barreau de Versailles — Mantes-la-Jolie</p>
-                <p class="hero-text">
+                <h1 class="hero-animate-in">Maître François-Xavier Cressent</h1>
+                <p class="hero-subtitle hero-animate-in">Avocat au Barreau de Versailles — Mantes-la-Jolie</p>
+                <p class="hero-text hero-animate-in">
                     Un accompagnement juridique fondé sur la proximité, l'écoute et l'efficacité.
                     Je défends vos intérêts avec rigueur et humanité, quelle que soit la complexité de votre situation.
                 </p>
-                <div class="hero-actions">
+                <div class="hero-actions hero-animate-in">
                     <a href="contact.html" class="btn btn-primary">Nous contacter</a>
                 </div>
             </div>
             <div class="hero-media">
                 <div class="hero-slider">
                     <div class="hero-slide active">
-                        <img src="assets/hero-justice.jpg" alt="Marteau de juge et balance de la justice" class="hero-image">
+                        <img src="JH.jpg" alt="Illustration juridique" class="hero-image">
                     </div>
                     <div class="hero-slide">
-                        <img src="assets/PPID.jpg" alt="Illustration droit des étrangers" class="hero-image">
+                        <img src="PPID.jpg" alt="Illustration droit des étrangers" class="hero-image">
                     </div>
                     <div class="hero-slide">
-                        <img src="assets/DDLFID.jpg" alt="Illustration droit de la famille" class="hero-image">
+                        <img src="DDLFID.jpg" alt="Illustration droit de la famille" class="hero-image">
                     </div>
                     <div class="hero-slide">
-                        <img src="assets/DPI2.jpg" alt="Illustration droit pénal" class="hero-image">
+                        <img src="DPI2.jpg" alt="Illustration droit pénal" class="hero-image">
                     </div>
                     <div class="hero-slide">
-                        <img src="assets/DRID2.jpg" alt="Illustration droit fiscal" class="hero-image">
+                        <img src="DRID2.jpg" alt="Illustration droit fiscal" class="hero-image">
                     </div>
                     <div class="hero-slide">
-                        <img src="assets/DCID.jpg" alt="Illustration droit commercial" class="hero-image">
+                        <img src="DCID.jpg" alt="Illustration droit commercial" class="hero-image">
                     </div>
+                    <div class="hero-slide">
+                        <img src="DFID.webp" alt="Illustration droit fiscal" class="hero-image">
+                    </div>
+
+                    <!-- Controls -->
+                    <button class="hero-control hero-prev" aria-label="Image précédente">
+                        <i data-lucide="chevron-left"></i>
+                    </button>
+                    <button class="hero-control hero-next" aria-label="Image suivante">
+                        <i data-lucide="chevron-right"></i>
+                    </button>
                 </div>
             </div>
         </div>
@@ -90,7 +101,7 @@
     <!-- Valeurs -->
     <section class="section">
         <div class="container">
-            <h2 class="text-center">Les valeurs du cabinet</h2>
+            <h2 class="text-center section-title-reveal">Les valeurs du cabinet</h2>
             <div class="grid-4" style="margin-top: 40px;">
                 <div class="card text-center">
                     <div class="card-icon"><i data-lucide="map-pin"></i></div>
@@ -119,7 +130,7 @@
     <!-- Domaines -->
     <section class="section section-bg">
         <div class="container">
-            <h2 class="text-center">Domaines d'intervention</h2>
+            <h2 class="text-center section-title-reveal">Domaines d'intervention</h2>
             <div class="domain-link-grid">
                 <a href="domaines.html#etrangers" class="domain-link-card">
                     <div class="domain-link-icon"><i data-lucide="globe" class="text-primary" size="22"></i></div>
@@ -143,7 +154,8 @@
                     </div>
                 </a>
                 <a href="domaines.html#fiscal" class="domain-link-card">
-                    <div class="domain-link-icon"><i data-lucide="file-bar-chart" class="text-primary" size="22"></i></div>
+                    <div class="domain-link-icon"><i data-lucide="file-bar-chart" class="text-primary" size="22"></i>
+                    </div>
                     <div>
                         <h3>Droit Fiscal</h3>
                         <p>Conseil, contrôles fiscaux, contentieux.</p>
@@ -171,8 +183,9 @@
         <div class="container">
             <div class="reviews-heading">
                 <div class="reviews-title">
-                    <h2>Avis clients</h2>
-                    <p class="reviews-subtitle text-light">Des retours authentiques de clients accompagnés par le cabinet.</p>
+                    <h2 class="section-title-reveal">Avis clients</h2>
+                    <p class="reviews-subtitle text-light">Des retours authentiques de clients accompagnés par le
+                        cabinet.</p>
                 </div>
                 <div class="reviews-summary" aria-label="Note Google : 4,3 sur 5, 38 avis">
                     <div class="reviews-summary-top">
@@ -196,8 +209,7 @@
             <div class="quick-access-card">
                 <div class="quick-access-grid">
                     <div class="quick-access-content">
-                        <p class="quick-access-eyebrow">Accès rapide</p>
-                        <h2>Accès Rapide</h2>
+                        <h2 class="section-title-reveal">Accès Rapide</h2>
                         <p class="quick-access-lead">
                             Le cabinet est idéalement situé au cœur de Mantes-la-Jolie.
                         </p>
@@ -206,7 +218,8 @@
                                 <div class="quick-access-icon"><i data-lucide="map-pin"></i></div>
                                 <div>
                                     <span class="quick-access-label">Adresse</span>
-                                    <span class="quick-access-value">2 bis Rue Pierre de Ronsard, 78200 Mantes-la-Jolie</span>
+                                    <span class="quick-access-value">2 bis Rue Pierre de Ronsard, 78200
+                                        Mantes-la-Jolie</span>
                                 </div>
                             </div>
                             <div class="quick-access-item">
