@@ -19,7 +19,7 @@
 
 </head>
 
-<body>
+<body class="domains-page">
 
     <header class="header">
         <div class="container header-container">
@@ -30,7 +30,18 @@
             <nav>
                 <ul class="nav-menu">
                     <li><a href="index.html" class="nav-link">Accueil</a></li>
-                    <li><a href="domaines.html" class="nav-link">Domaines</a></li>
+                    <li class="has-dropdown">
+                        <a href="domaines.html" class="nav-link dropdown-toggle" aria-expanded="false">
+                            Domaines <i data-lucide="chevron-down" size="14"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="domaines.html#etrangers">Droit des Étrangers</a></li>
+                            <li><a href="domaines.html#famille">Droit de la Famille</a></li>
+                            <li><a href="domaines.html#penal">Droit Pénal</a></li>
+                            <li><a href="domaines.html#fiscal">Droit Fiscal</a></li>
+                            <li><a href="domaines.html#commercial">Droit Commercial</a></li>
+                        </ul>
+                    </li>
                     <li><a href="contact.html" class="nav-link">Contact</a></li>
                     <li><a href="contact.html" class="btn btn-primary btn-sm">Nous contacter</a></li>
                 </ul>
@@ -54,7 +65,7 @@
             <div class="grid-2" style="align-items: center;">
                 <div>
                     <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
-                        <div style="background: var(--color-secondary); padding: 10px; border-radius: 50%;">
+                        <div class="domain-icon-wrapper">
                             <i data-lucide="globe" class="text-primary" size="32"></i>
                         </div>
                         <h2 style="margin: 0;">Droit des Étrangers</h2>
@@ -89,7 +100,7 @@
             <div class="grid-2" style="align-items: center;">
                 <div style="order: 2;"> <!-- Swap order for visual variety -->
                     <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
-                        <div style="background: var(--color-secondary); padding: 10px; border-radius: 50%;">
+                        <div class="domain-icon-wrapper">
                             <i data-lucide="users" class="text-primary" size="32"></i>
                         </div>
                         <h2 style="margin: 0;">Droit de la Famille</h2>
@@ -123,7 +134,7 @@
             <div class="grid-2" style="align-items: center;">
                 <div>
                     <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
-                        <div style="background: var(--color-secondary); padding: 10px; border-radius: 50%;">
+                        <div class="domain-icon-wrapper">
                             <i data-lucide="scale" class="text-primary" size="32"></i>
                         </div>
                         <h2 style="margin: 0;">Droit Pénal</h2>
@@ -157,7 +168,7 @@
             <div class="grid-2" style="align-items: center;">
                 <div style="order: 2;">
                     <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
-                        <div style="background: var(--color-secondary); padding: 10px; border-radius: 50%;">
+                        <div class="domain-icon-wrapper">
                             <i data-lucide="file-bar-chart" class="text-primary" size="32"></i>
                         </div>
                         <h2 style="margin: 0;">Droit Fiscal</h2>
@@ -190,7 +201,7 @@
             <div class="grid-2" style="align-items: center;">
                 <div>
                     <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
-                        <div style="background: var(--color-secondary); padding: 10px; border-radius: 50%;">
+                        <div class="domain-icon-wrapper">
                             <i data-lucide="briefcase" class="text-primary" size="32"></i>
                         </div>
                         <h2 style="margin: 0;">Droit Commercial</h2>
